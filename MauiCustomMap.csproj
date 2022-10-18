@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <RootNamespace>MauiMaps</RootNamespace>
+        
+		<!-- Display name -->
+        <ApplicationTitle>MauiMaps</ApplicationTitle>
+
+        <!-- App Identifier -->
+        <ApplicationId>com.dgokhan.mauimaps</ApplicationId>
+        <ApplicationIdGuid>462432A7-942F-4D3D-9920-FE89F7AD21D8</ApplicationIdGuid>
+
+        <!-- Versions -->
+        <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+        <ApplicationVersion>1</ApplicationVersion>
+	</PropertyGroup>
+
+    <ItemGroup>
+        <!-- App Icon -->
+        <MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+
+        <!-- Splash Screen -->
+        <MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+
+        <!-- Images -->
+        <MauiImage Include="Resources\Images\*" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="dark_map_style.json" />
+      <None Remove="light_map_theme.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Include="dark_map_style.json" />
+      <EmbeddedResource Include="light_map_theme.json" />
+    </ItemGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.0-rc.1.6683" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="6.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
+	</ItemGroup>
+
+</Project>
